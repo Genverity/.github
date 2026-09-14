@@ -1,0 +1,32 @@
+name: 🔧 Chore
+description: Small, well-defined task that doesn't fit bug/feature/hygiene
+title: "[Chore]: "
+labels: ["type:chore"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be done?
+      description: Keep it small and concrete — if this is bigger than a couple hours of work, consider Feature or Hygiene instead.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Low
+        - Medium
+        - High
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: area
+    attributes:
+      label: Area / module
+      placeholder: e.g. auth, billing, ingest-pipeline
+    validations:
+      required: false

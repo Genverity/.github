@@ -1,0 +1,59 @@
+name: 🐛 Bug
+description: Something is broken or not behaving as expected
+title: "[Bug]: "
+labels: ["type:bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What's broken?
+      description: A clear description of the bug.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Low (cosmetic/minor)
+        - Medium (annoying but workaroundable)
+        - High (blocks a workflow)
+        - Critical (data loss / crash / security)
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: area
+    attributes:
+      label: Area / module
+      placeholder: e.g. auth, billing, ingest-pipeline
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Logs, screenshots, stack traces, environment info, etc.
+    validations:
+      required: false

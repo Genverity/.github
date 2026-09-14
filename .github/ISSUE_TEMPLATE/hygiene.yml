@@ -1,0 +1,56 @@
+name: 🧹 Hygiene / Tech Debt
+description: Refactor, cleanup, upgrade, or other non-user-facing improvement
+title: "[Hygiene]: "
+labels: ["type:hygiene"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs cleaning up?
+      description: What's the current state, and what's wrong with it?
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this matter?
+      description: What does this cost you today (dev speed, bugs, confusion, risk)? What breaks if it's ignored?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Refactor
+        - Dependency/version upgrade
+        - Test coverage
+        - Documentation
+        - Performance
+        - Dead code removal
+        - Tooling/CI
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Low (whenever)
+        - Medium (before it gets worse)
+        - High (actively slowing things down)
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: area
+    attributes:
+      label: Area / module
+      placeholder: e.g. auth, billing, ingest-pipeline
+    validations:
+      required: false
